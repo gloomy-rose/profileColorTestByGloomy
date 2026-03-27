@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teste de Cores - Layout Perfil</title>
+ <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+ 
+</head>
+<body>  <button class="toggle-controls-btn" id="toggleControls">Ocultar controles</button>
+  <div class="controls">
+    <div class="control-group">
+      <label for="bgHex">Cor do fundo</label>
+      <div class="color-row">
+        <input type="color" id="bgColor" value="#e9e9e9" />
+        <input type="text" id="bgHex" value="#e9e9e9" />
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label for="textHex">Cor do texto</label>
+      <div class="color-row">
+        <input type="color" id="textColor" value="#a84f4f" />
+        <input type="text" id="textHex" value="#a84f4f" />
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label for="boxHex">Cor dos boxes</label>
+      <div class="color-row">
+        <input type="color" id="boxColor" value="#f7f7f7" />
+        <input type="text" id="boxHex" value="#f7f7f7" />
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label for="characterNameInput">Nome do personagem</label>
+      <div class="url-row">
+        <input type="text" id="characterNameInput" placeholder="Nome Personagem" value="Nome Personagem" />
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label for="mainImageUrl">Imagem principal por URL</label>
+      <div class="url-row">
+        <input type="text" id="mainImageUrl" placeholder="https://exemplo.com/imagem.jpg" value="" />
+        <button id="applyMainImage">Aplicar</button>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label for="thumbImageUrl">Miniatura/comunidade por URL</label>
+      <div class="url-row">
+        <input type="text" id="thumbImageUrl" placeholder="https://exemplo.com/thumb.jpg" />
+        <button id="applyThumbImage">Aplicar</button>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label>Presets rápidos</label>
+      <div class="preset-row">
+        <button data-bg="#e9e9e9" data-text="#a84f4f" data-box="#f7f7f7">Original</button>
+        <button data-bg="#111827" data-text="#f9a8d4" data-box="#1f2937">Escuro rosa</button>
+        <button data-bg="#f8f5ef" data-text="#7c5c3b" data-box="#fffdf8">Bege</button>
+      </div>
+    </div>
+    <div class="control-group">
+      <label>Extrair cores atuais</label>
+      <div class="url-row">
+        <button id="extractColorsBtn">Mostrar cores</button>
+      </div>
+      <div class="extracted-colors" id="extractedColors" style="display:none;">
+        <div class="url-row" style="justify-content:flex-end;">
+          <button id="copyColorsBtn">Copiar</button>
+        </div>
+        <div class="color-result-item">
+          <strong>Background:</strong>
+          <span id="resultBg">#e9e9e9</span>
+        </div>
+        <div class="color-result-item">
+          <strong>Texto:</strong>
+          <span id="resultText">#a84f4f</span>
+        </div>
+        <div class="color-result-item">
+          <strong>Boxes:</strong>
+          <span id="resultBox">#f7f7f7</span>
+        </div>
+      </div>
+     </div>
+  </div>
+
+  <main class="page">
+    <section class="panel left-card">
+      <div>
+        <div class="photo-frame">
+            <img id="mainPreview" src="https://i.pinimg.com/1200x/98/cc/56/98cc56bf34b4013c23d8d72a3b4ead26.jpg" alt="Preview da imagem principal" />
+        </div>
+        <div class="name" id="profileName">Nome Personagem</div>
+      </div>
+        <div class="profile-menu">
+          <div class="menu-item" id="menuDate">21/11/2025 20:57</div>
+          <div class="menu-item">Família e Relacionamento</div>
+          <div class="menu-item">Recados</div>
+          <div class="menu-item">Amigos</div>
+          <div class="menu-item">Fotos</div>
+          <div class="menu-item">Adicionar como amigo</div>
+        </div>
+    </section>
+
+    <section class="panel status-box">
+      <h1 class="status-title" id="statusName">Nome Personagem</h1>
+      <div class="status-text">Digite seu status clicando aqui</div>
+    </section>
+
+    <aside class="right-column">
+      <section class="panel">
+        <h2 class="box-title">AMIGOS (3)</h2>
+        <div class="thumb-list">
+          <div class="thumb"><img id="thumb1" alt="Amigo 1" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80"></div>
+          <div class="thumb"><img id="thumb2" alt="Amigo 2" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80"></div>
+          <div class="thumb"><img id="thumb3" alt="Amigo 3" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80"></div>
+        </div>
+        <div class="see-all">Ver todos</div>
+      </section>
+
+      <section class="panel">
+        <h2 class="box-title">COMUNIDADES</h2>
+        <div class="thumb-list">
+          <div class="community-thumb"><img id="community1" alt="Comunidade" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=300&q=80"></div>
+        </div>
+        <div class="see-all">Ver todas</div>
+      </section>
+    </aside>
+  </main>
+
+</body>
+</html>
